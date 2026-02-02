@@ -28,7 +28,7 @@ echo "${list}" | grep -v '^$' | grep -v '^#' | while read -r line; do
   go build -o http-server
   chmod +x http-server
   tar -czf "${outputFile}.tgz" http-server
-  rm -f "${outputFile}"
+  rm -f http-server
 done
 
 sed -i -E "s|var version = \".+?\"|var version = \"<none>\"|" main.go
