@@ -21,9 +21,6 @@ echo "${list}" | grep -v '^$' | grep -v '^#' | while read -r line; do
   export GOARCH=${arch}
   outputFile="${appName}-${version}-${GOOS}-${GOARCH}"
   echo "start package: ${outputFile}"
-  if [[ ${os} == "windows" ]]; then
-    outputFile="${outputFile}.exe"
-  fi
   rm -f http-server
   go build -o http-server
   chmod +x http-server
